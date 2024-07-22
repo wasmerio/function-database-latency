@@ -18,13 +18,13 @@ if (!$mysqli->real_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME, $DB_PORT, NUL
     echo json_encode(["error" => "Connection failed"]);
     exit();
 }
-$data = [];
 
 $count = isset($_GET["count"]) ? $_GET["count"] : 1;
 for ($i = 0; $i < $count; $i++) {
     $query = "SELECT emp_no, first_name, last_name FROM employees LIMIT 10";
 
     $result = $mysqli->query($query);
+    $data = [];
     while ($row =  $result->fetch_assoc()) {
         $data[] = $row;
     }
