@@ -1,0 +1,13 @@
+[dependencies]
+"arshia001/php" = "=8.3.4-pre.14"
+
+[fs]
+"/app" = "."
+
+[[command]]
+name = "run"
+module = "arshia001/php:php"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = ["-t", "/app", "-S", "localhost:8080"]

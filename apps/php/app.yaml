@@ -1,0 +1,10 @@
+kind: wasmer.io/App.v0
+name: php-db-latency
+owner: wasmer-tests
+package: .
+app_id: da_nzrI7tJUZJan
+domains:
+ - php-db-latency.wasmer.app
+# locality:
+#   regions:
+#    - eu
