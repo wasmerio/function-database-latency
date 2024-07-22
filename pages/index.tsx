@@ -16,7 +16,8 @@ type Endpoint = {
   global?: string;
 };
 
-const PHP_REGIONAL_URL = process.env.PHP_REGIONAL_URL || "http://localhost:8080";
+const PHP_GLOBAL_URL = process.env.PHP_REGIONAL_URL || "https://php-db-latency.wasmer.app/";
+const PHP_REGIONAL_URL = process.env.PHP_REGIONAL_URL || "https://php-db-latency.wasmer.app/";
 
 const BENCHMARKS: {
   [name: string]: {
@@ -27,23 +28,42 @@ const BENCHMARKS: {
 } = {
   "tidb-php": {
     icon: NeonIcon,
-    display: "TiDb (PHP)",
+    display: "TiDb (MySQL, PHP)",
     endpoints: {
       regional: `${PHP_REGIONAL_URL}/api/tidb`,
+      global: `${PHP_GLOBAL_URL}/api/tidb`,
     },
   },
   "supabase-php": {
     icon: BoltIcon,
-    display: "Supabase (PHP)",
+    display: "Supabase (Postgres, PHP)",
     endpoints: {
       regional: `${PHP_REGIONAL_URL}/api/supabase`,
+      global: `${PHP_GLOBAL_URL}/api/supabase`,
     },
   },
   "planetscale-php": {
     icon: CircleStackIcon,
-    display: "PlanetScale (PHP)",
+    display: "PlanetScale (MySQL, PHP)",
     endpoints: {
       regional: `${PHP_REGIONAL_URL}/api/planetscale`,
+      global: `${PHP_GLOBAL_URL}/api/planetscale`,
+    },
+  },
+  "neon-php": {
+    icon: NeonIcon,
+    display: "Neon (Postgres, PHP)",
+    endpoints: {
+      regional: `${PHP_REGIONAL_URL}/api/neon`,
+      global: `${PHP_GLOBAL_URL}/api/neon`,
+    },
+  },
+  "xata-php": {
+    icon: XataIcon,
+    display: "Xata (Postgres, PHP)",
+    endpoints: {
+      regional: `${PHP_REGIONAL_URL}/api/xata`,
+      global: `${PHP_GLOBAL_URL}/api/xata`,
     },
   },
 };
@@ -405,8 +425,8 @@ export default function Page() {
                   };
                 })}
                 index="attempt"
-                categories={["Global Edge", "Regional Edge", "Node.js"]}
-                colors={["indigo", "cyan", "purple"]}
+                categories={["Global Edge", "Regional Edge" /*, "Node.js"*/]}
+                colors={["indigo", "cyan" /*, "purple" */]}
                 valueFormatter={dataFormatter}
                 yAxisWidth={48}
               />
