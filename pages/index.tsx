@@ -17,7 +17,7 @@ type Endpoint = {
 };
 
 const PHP_GLOBAL_URL = process.env.PHP_REGIONAL_URL || "https://php-db-latency.wasmer.app/";
-const PHP_REGIONAL_URL = process.env.PHP_REGIONAL_URL || "https://php-db-latency.wasmer.app/";
+const PHP_REGIONAL_URL = process.env.PHP_REGIONAL_URL || "https://php-db-latency-regional.wasmer.app/";
 
 const BENCHMARKS: {
   [name: string]: {
