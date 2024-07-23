@@ -1,38 +1,20 @@
-# Vercel Functions Database Latency
+# Wasmer Edge Database Latency
 
-This demo helps observe the latency characteristics of querying different popular data services from [Vercel Functions](https://vercel.com/docs/functions).
+This demo helps observe the latency characteristics of querying different popular data services from [Wasmer Edge](https://wasmer.io/products/edge).
 
-https://db-latency.vercel.app
+https://db-latency.wasmer.app
 
 ## Providers
 
 Here is an overview of all data service providers and the compute locations available in this app:
 
-| Provider                         | Edge (Global) | Edge (Regional / US East) | Node |
-| :------------------------------- | :------------ | :------------------------ | ---- |
-| Convex (SDK)                     | ✅            | ✅                        | ✅   |
-| Fauna                            | ✅            | ✅                        | ✅   |
-| Grafbase (GraphQL)               | ✅            | ✅                        | ✅   |
-| Neon w/ @neondatabase/serverless | ✅            | ✅                        | ✅   |
-| Neon w/ Drizzle ORM              | ✅            | ✅                        | ✅   |
-| Neon w/ Prisma ORM               | ✅            | ✅                        | ✅   |
-| PlanetScale w/ Kysely            | ✅            | ✅                        | ❌   |
-| PlanetScale w/ Prisma ORM        | ✅            | ✅                        | ✅   |
-| PlanetScale w/ Drizzle           | ✅            | ✅                        | ✅   |
-| PolyScale                        | ✅            | ✅                        | ❌   |
-| Shopify (Storefront GraphQL API) | ✅            | ✅                        | ✅   |
-| Supabase w/ supabase-js          | ✅            | ✅                        | ❌   |
-| Supabase w/ Prisma ORM           | ❌            | ❌                        | ✅   |
-| Supabase w/ Drizzle              | ❌            | ❌                        | ✅   |
-| TiDB Cloud (serverless-js)       | ✅            | ✅                        | ❌   |
-| Tigris                           | ✅            | ✅                        | ❌   |
-| Turso                            | ✅            | ✅                        | ✅   |
-| Turso w/ Prisma ORM              | ✅            | ✅                        | ✅   |
-| Turso w/ Drizzle                 | ✅            | ✅                        | ✅   |
-| Upstash (SDK)                    | ✅            | ✅                        | ✅   |
-| Xata w/ TypeScript SDK           | ✅            | ✅                        | ✅   |
-| Xata w/ Prisma ORM               | ❌            | ❌                        | ✅   |
-| Xata w/ Drizzle                  | ❌            | ❌                        | ✅   |
+| Provider       | Edge (Global) | Edge (Regional / US East) |
+| :--------------| :------------ | :------------------------ |
+| Neon           | ✅            | ✅                        |
+| PlanetScale    | ✅            | ✅                        |
+| Supabase       | ✅            | ✅                        |
+| TiDB Cloud     | ✅            | ✅                        |
+| Xata           | ✅            | ✅                        |
 
 ## Testing Methodology
 
@@ -46,3 +28,5 @@ interface EmployeeTable {
   last_name: string;
 }
 ```
+
+You can find the instructions for setting up the database inside of [db](./db/)
