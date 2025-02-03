@@ -16,8 +16,10 @@ type Endpoint = {
   global?: string;
 };
 
-const PHP_GLOBAL_URL = process.env.PHP_REGIONAL_URL || "https://php-db-latency.wasmer.app/";
-const PHP_REGIONAL_URL = process.env.PHP_REGIONAL_URL || "https://php-db-latency-regional.wasmer.app/";
+const IS_WASMER_DEV = globalThis.document?.location?.href?.includes(".wasmer.dev");
+const BASE_DOMAIN = IS_WASMER_DEV ? "wasmer.dev" : "wasmer.app";
+const PHP_GLOBAL_URL = process.env.PHP_GLOBAL_URL ||  `https://php-db-latency.${BASE_DOMAIN}/`;
+const PHP_REGIONAL_URL = process.env.PHP_REGIONAL_URL || `https://php-db-latency-regional.${BASE_DOMAIN}/`;
 
 const BENCHMARKS: {
   [name: string]: {
@@ -64,6 +66,14 @@ const BENCHMARKS: {
     endpoints: {
       regional: `${PHP_REGIONAL_URL}/api/xata`,
       global: `${PHP_GLOBAL_URL}/api/xata`,
+    },
+  },
+  "wasmer": {
+    icon: CircleStackIcon,
+    display: "Wasmer (MySQL, PHP)",
+    endpoints: {
+      regional: `${PHP_REGIONAL_URL}/api/wasmer`,
+      global: `${PHP_GLOBAL_URL}/api/wasmer`,
     },
   },
 };
