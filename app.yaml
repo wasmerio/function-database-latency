@@ -1,6 +1,7 @@
-kind: wasmer.io/App.v0
 name: db-latency
 owner: wasmer-tests
-package: .
+package: '.'
 domains:
-- db-latency.wasmer.app
+- db-latency.wasmer.dev
+# - db-latency.wasmer.app
+kind: wasmer.io/App.v0

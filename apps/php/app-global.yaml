@@ -3,4 +3,5 @@ name: php-db-latency
 owner: wasmer-tests
 package: .
 domains:
- - php-db-latency.wasmer.app
+ - php-db-latency.wasmer.dev
+ # - php-db-latency.wasmer.app
